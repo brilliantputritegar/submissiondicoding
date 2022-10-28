@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.css";
-
 class DrinkItem extends HTMLElement {
   constructor() {
     super();
@@ -14,49 +12,48 @@ class DrinkItem extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
         <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-          }
-          :host {
-            display: block;
+          .card {
             margin-bottom: 18px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 10px;
+            max-width: 300px;
+            margin-right: 10px;
+            margin-left: 10px;
             overflow: hidden;
+            background-color: #f8f9fa;
           }
-          .image-drink {
+
+          .card img {
             width: 100%;
             max-height: 300px;
+            max-width: 300px;
             object-fit: cover;
             object-position: center;
           }
-          .drink-info {
+
+          .card .card-body {
             padding: 24px;
-            background-color: grey;
           }
-          .drink-info > h2 {
+
+          .card .card-body h2 {
             font-weight: lighter;
           }
-          .drink-info > p {
+
+          .card .card-body p {
             margin-top: 10px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
+            -webkit-line-clamp: 10;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 10; /* number of lines to show */
           }
+          
         </style>
-        <div class="row">
-        <div class="col">
-        <img class="image-drink" src="${this._drink.strDrinkThumb}" alt="image">
-        <div class="drink-info">
-          <h2>${this._drink.strDrink}</h2>
-          <p>${this._drink.strInstructions}</p>
-        </div>
-        </div>
+        <div class="card">
+          <img class="card-img-top" src="${this._drink.strDrinkThumb}" alt="image">
+          <div class="card-body">
+            <h5 class="card-title">${this._drink.strDrink}</h5>
+            <p class="card-text">${this._drink.strInstructions}</p>
+          </div>
         </div>
       `;
   }

@@ -1,11 +1,13 @@
 import "../component/drink-list.js";
 import "../component/search-bar.js";
+import 'bootstrap';
 import DataSource from "../data/data-source.js";
-import "bootstrap/dist/css/bootstrap.css";
 
 const main = () => {
   const searchElement = document.querySelector("search-bar");
   const drinkListElement = document.querySelector("drink-list");
+
+
 
   const onButtonSearchClicked = async () => {
     try {

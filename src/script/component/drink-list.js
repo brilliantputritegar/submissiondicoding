@@ -1,4 +1,5 @@
 import "./drink-item.js";
+import 'bootstrap';
 
 class DrinkList extends HTMLElement {
   constructor() {

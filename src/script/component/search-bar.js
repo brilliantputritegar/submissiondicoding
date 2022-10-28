@@ -21,7 +21,9 @@ class SearchBar extends HTMLElement {
     this.shadowDOM.innerHTML = `
         <style>
           .search-container {
-            max-width: 800px;
+            width: 500px;
+            max-width: 100%;
+            margin: 0 auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             padding: 16px;
             border-radius: 5px;
